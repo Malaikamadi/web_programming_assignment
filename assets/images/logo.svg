@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 70" width="320" height="70">
+  <defs>
+    <linearGradient id="dgOrange" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff7a45" />
+      <stop offset="100%" stop-color="#f35626" />
+    </linearGradient>
+  </defs>
+  <!-- Background transparent -->
+  <g transform="translate(10, 12)">
+    <!-- django -->
+    <text x="0" y="38" font-family="'Trebuchet MS', 'Segoe UI', Arial, sans-serif" font-size="38" font-weight="900" fill="url(#dgOrange)" letter-spacing="-1">django</text>
+    <!-- girls -->
+    <text x="135" y="38" font-family="'Caveat', 'Brush Script MT', 'Comic Sans MS', cursive" font-size="42" font-weight="700" fill="#f58220" font-style="italic">girls</text>
+    <!-- plus -->
+    <text x="225" y="36" font-family="'Trebuchet MS', sans-serif" font-size="34" font-weight="900" fill="#f35626">+</text>
+    <!-- badge sierra leone -->
+    <rect x="252" y="14" width="46" height="20" rx="4" fill="#00a859" opacity="0.9" />
+    <rect x="252" y="14" width="46" height="6.6" rx="2" fill="#1eb53a" />
+    <rect x="252" y="20.6" width="46" height="6.6" fill="#ffffff" />
+    <rect x="252" y="27.2" width="46" height="6.6" rx="2" fill="#0072c6" />
+    <text x="255" y="44" font-family="'Tahoma', sans-serif" font-size="8" font-weight="700" fill="#64748b" letter-spacing="1">SIERRA LEONE</text>
+  </g>
+</svg>

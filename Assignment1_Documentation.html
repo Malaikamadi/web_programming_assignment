@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Assignment 1 Documentation - Django Girls Sierra Leone</title>
+  <style>
+    /* Strictly formatted to Tahoma font, size 12pt as per submission guidelines */
+    body {
+      font-family: Tahoma, 'Segoe UI', Arial, sans-serif;
+      font-size: 12pt;
+      line-height: 1.5;
+      color: #1e293b;
+      background: #faf8f9;
+      margin: 0;
+      padding: 40px 0;
+    }
+
+    .doc-page {
+      background: #ffffff;
+      width: 210mm;
+      min-height: 297mm;
+      padding: 25mm 25mm 20mm;
+      margin: 0 auto 30px;
+      box-shadow: 0 4px 12px rgba(225, 29, 72, 0.06);
+      box-sizing: border-box;
+      position: relative;
+      border: 1px solid #fce7f3;
+    }
+
+    .page-footer {
+      position: absolute;
+      bottom: 12mm;
+      left: 25mm;
+      right: 25mm;
+      display: flex;
+      justify-content: space-between;
+      font-size: 9pt;
+      color: #64748b;
+      border-top: 1px solid #fbcfe8;
+      padding-top: 6px;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: Tahoma, sans-serif;
+      color: #1e1b2e;
+      margin-top: 0;
+    }
+
+    h1.doc-title {
+      font-size: 18pt;
+      font-weight: bold;
+      text-align: center;
+      line-height: 1.3;
+      margin-bottom: 20px;
+    }
+
+    h2.section-heading {
+      font-size: 14pt;
+      font-weight: bold;
+      color: #1e1b2e;
+      border-bottom: 2px solid #e11d48;
+      padding-bottom: 4px;
+      margin-top: 20px;
+      margin-bottom: 12px;
+    }
+
+    .section-number {
+      color: #e11d48;
+    }
+
+    p {
+      margin-bottom: 12px;
+      text-align: justify;
+    }
+
+    ul {
+      margin-top: 4px;
+      margin-bottom: 14px;
+      padding-left: 22px;
+    }
+
+    li {
+      margin-bottom: 6px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 10pt;
+    }
+
+    th, td {
+      border: 1px solid #cbd5e1;
+      padding: 8px 10px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #181124;
+      color: #ffffff;
+      font-weight: bold;
+    }
+
+    tr:nth-child(even) td {
+      background-color: #fff1f2;
+    }
+
+    .meta-box {
+      border: 1px solid #fecdd3;
+      background: #fff5f7;
+      padding: 16px 20px;
+      margin: 30px auto;
+      border-radius: 8px;
+      width: 85%;
+    }
+
+    .meta-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 6px 0;
+      border-bottom: 1px dashed #fbcfe8;
+    }
+
+    .meta-row:last-child {
+      border-bottom: none;
+    }
+
+    .meta-label {
+      font-weight: bold;
+      color: #334155;
+    }
+
+    .screenshot-frame {
+      border: 1px solid #fecdd3;
+      border-radius: 6px;
+      overflow: hidden;
+      margin: 12px 0 6px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(225, 29, 72, 0.06);
+    }
+
+    .screenshot-frame img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .figure-caption {
+      font-size: 9.5pt;
+      font-style: italic;
+      color: #64748b;
+      text-align: center;
+      margin-bottom: 14px;
+    }
+
+    .badge-success {
+      color: #059669;
+      font-weight: bold;
+    }
+
+    .signature-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      margin-top: 25px;
+      padding-top: 15px;
+      border-top: 1px solid #fbcfe8;
+      font-size: 10pt;
+    }
+
+    .print-btn-bar {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .btn-print {
+      background: linear-gradient(135deg, #fb7185 0%, #e11d48 100%);
+      color: white;
+      border: none;
+      padding: 11px 26px;
+      font-family: Tahoma;
+      font-size: 11pt;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(225, 29, 72, 0.25);
+    }
+
+    @media print {
+      body {
+        background: transparent;
+        padding: 0;
+      }
+      .print-btn-bar {
+        display: none;
+      }
+      .doc-page {
+        margin: 0;
+        box-shadow: none;
+        border: none;
+        page-break-after: always;
+        height: 297mm;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="print-btn-bar">
+    <button class="btn-print" onclick="window.print()">Print Documentation (or Save as PDF)</button>
+  </div>
+
+  <!-- =========================================================================
+       PAGE 1: COVER PAGE
+       ========================================================================= -->
+  <div class="doc-page">
+    <div style="text-align: center; margin-top: 20px; margin-bottom: 30px;">
+      <h2 style="font-size: 16pt; margin-bottom: 6px;">LIMKOKWING UNIVERSITY OF CREATIVE TECHNOLOGY</h2>
+      <h3 style="font-size: 13pt; color: #475569; font-weight: normal; margin-bottom: 4px;">SIERRA LEONE CAMPUS</h3>
+      <p style="font-size: 10.5pt; color: #64748b; margin-top: 2px;">
+        Faculty of Information and Communication Technology<br>
+        Department of Software Engineering & Multimedia
+      </p>
+    </div>
+
+    <div style="text-align: center; margin: 40px 0;">
+      <div style="font-size: 11.5pt; font-weight: bold; color: #e11d48; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px;">
+        Course Assignment 1 (Weeks 1 to 4)
+      </div>
+      <h1 class="doc-title">
+        Design and Development of Web Platform and Authentication System for Django Girls Sierra Leone
+      </h1>
+      <p style="font-size: 11pt; color: #475569; max-width: 80%; margin: 0 auto;">
+        A PHP-driven responsive web application incorporating secure user authentication, password hashing, personalized dashboard architecture, and database persistence.
+      </p>
+    </div>
+
+    <div class="meta-box">
+      <div class="meta-row">
+        <span class="meta-label">Student Full Name:</span>
+        <span>Alimatu Maliaka Jalloh</span>
+      </div>
+      <div class="meta-row">
+        <span class="meta-label">Student ID:</span>
+        <span>905004463</span>
+      </div>
+      <div class="meta-row">
+        <span class="meta-label">Academic Program:</span>
+        <span>BSC(Hons) Software Engineering with Multimedia</span>
+      </div>
+      <div class="meta-row">
+        <span class="meta-label">Current Semester:</span>
+        <span>Semester 5</span>
+      </div>
+      <div class="meta-row">
+        <span class="meta-label">Module / Course:</span>
+        <span>Web Programming (DTECH 206 / ICT204)</span>
+      </div>
+      <div class="meta-row">
+        <span class="meta-label">Lecturer in Charge:</span>
+        <span>Kenneth G. Campbell</span>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 60px; font-size: 10pt; color: #64748b;">
+      Submission Academic Year: 2026 &bull; Freetown, Sierra Leone
+    </div>
+
+    <div class="page-footer">
+      <span>Web Programming Assignment 1</span>
+      <span>Page 1 of 5</span>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       PAGE 2: SECTION 1 & SECTION 2
+       ========================================================================= -->
+  <div class="doc-page">
+    <h2 class="section-heading"><span class="section-number">1.</span> Executive Summary & Selected Organisation Profile</h2>
+    <p>
+      For Assignment 1, the selected Sierra Leonean organisation is <strong>Django Girls Sierra Leone</strong> (Freetown Chapter). 
+      Django Girls is a community-powered, non-profit initiative dedicated to bridging the acute gender gap in the Sierra Leonean technology ecosystem by introducing women and young girls to modern programming through free, hands-on workshops.
+    </p>
+    <p>
+      In Sierra Leone, female participation in computer science and software development has historically faced major hurdles, including limited access to beginner-friendly mentorship, digital infrastructure disparities, and intimidation surrounding technical disciplines. Django Girls Freetown overcomes these obstacles by offering an empowering, supportive, and accessible space where participants transition from complete digital beginners into capable software builders in a single workshop.
+    </p>
+    <p>
+      The web platform engineered for this assignment delivers the central digital presence for Django Girls Sierra Leone. The solution incorporates dynamic PHP server logic, relational database connectivity, modern responsive UI styling, robust password security, and personalized dashboard management—synthesizing all primary concepts covered during Weeks 1 to 4 of class.
+    </p>
+
+    <h2 class="section-heading"><span class="section-number">2.</span> Architecture & Web Platform Page Structure</h2>
+    <p>
+      The web application is partitioned into clean, modular components designed around user experience and security:
+    </p>
+    <ul>
+      <li><strong>Prominent Logo Display (Header):</strong> The official Django Girls logo is positioned prominently at the top header of every page alongside the Sierra Leone national tech badge, establishing instantaneous brand recognition and organizational trust.</li>
+      <li><strong>Home Page (<code>index.php</code>):</strong> The public gateway presenting the organisation's mission, impact statistics (500+ girls trained in SL, 100% free), interactive code showcases, live workshop schedules queried dynamically from MySQL, and calls-to-action.</li>
+      <li><strong>Sign-Up Page (<code>register.php</code>):</strong> A comprehensive participant onboarding form capturing full name, username, email, phone number, experience level, and preferred learning track, backed by extensive server-side validation and password hashing.</li>
+      <li><strong>Login Page (<code>login.php</code>):</strong> A secure authentication portal utilizing PDO prepared statements to query user records, validating entered credentials against hashed passwords, and initializing a protected PHP session.</li>
+      <li><strong>Dashboard (<code>dashboard.php</code>):</strong> A personalized user dashboard protected by session validation. Displays member profile cards, enrolled learning track, cohort progress metrics, mentor assignments, and quick actions.</li>
+      <li><strong>Logout Functionality (<code>logout.php</code>):</strong> A security endpoint that safely ends user sessions by clearing memory variables, deleting browser cookies, and destroying session records on the server.</li>
+      <li><strong>Standardized Copyright Footer (<code>footer.php</code>):</strong> Strictly implements the assignment copyright specification: <code>&copy; Alimatu Maliaka Jalloh, BSC(Hons) Software Engineering with Multimedia, Semester 5, 905004463, 2026</code>.</li>
+    </ul>
+
+    <div class="page-footer">
+      <span>Web Programming Assignment 1</span>
+      <span>Page 2 of 5</span>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       PAGE 3: SECTION 3 & SECTION 4
+       ========================================================================= -->
+  <div class="doc-page">
+    <h2 class="section-heading"><span class="section-number">3.</span> Detailed Explanation of Design Choices, Plugins & Themes</h2>
+    <p>
+      A purposeful, modern design system was crafted specifically for Django Girls Sierra Leone. The interface prioritizes simplicity, professionalism, and a distinctive feminine aesthetic tailored to women in technology:
+    </p>
+    <ul>
+      <li><strong>Feminine & Professional Color Palette:</strong> The visual theme is styled around a chic, modern feminine palette featuring rose-pink (<code>#e11d48</code>) and coral-pink (<code>#fb7185</code>) gradients as primary accents. This is paired with delicate rose-blush surfaces (<code>#fff1f2</code>, <code>#faf8f9</code>) and deep midnight-plum slate (<code>#181124</code>) for headers and cards, producing an empowering, sophisticated look that celebrates women in STEM.</li>
+      <li><strong>Professional Vector SVG Icons (No Emojis):</strong> To maintain a high standard of professional visual hierarchy, all decorative OS emojis were replaced with crisp, lightweight inline SVG vector icons (calendar, map pin, sparkle, code, users, globe, shield, lock). This guarantees uniform rendering across all mobile, desktop, and operating system platforms.</li>
+      <li><strong>Clean, Minimalist Layout Structure:</strong> Cards and containers feature balanced padding, smooth rounded borders (14px radius), soft shadows (<code>box-shadow: 0 4px 10px rgba(225, 29, 72, 0.05)</code>), and subtle borders (<code>#fce7f3</code>), avoiding visual clutter and keeping user attention focused on key actions.</li>
+      <li><strong>Typography Strategy:</strong> The layout utilizes <em>Plus Jakarta Sans</em> and <em>Tahoma</em> as the primary font stack, guaranteeing high legibility, clean geometric letterforms, and full compliance with assignment font guidelines. An accent script font (<em>Caveat</em>) is selectively applied to the logo badge to maintain the community's signature warmth.</li>
+      <li><strong>Feedback & Interactive Micro-Animations:</strong> Adhering to Human-Computer Interaction principles, form inputs feature glowing focus indicators, password fields include interactive visibility toggles, and live feedback indicators notify users when passwords match during registration.</li>
+    </ul>
+
+    <h2 class="section-heading"><span class="section-number">4.</span> Technical Implementation & Security Considerations</h2>
+    <p>
+      The platform strictly demonstrates core technical proficiencies from Weeks 1 to 4 of the Web Programming curriculum:
+    </p>
+    <ul>
+      <li><strong>Password Hashing (<code>password_hash</code> & <code>password_verify</code>):</strong> In strict accordance with modern security standards, plaintext passwords are never stored. Upon registration, user passwords are encrypted using PHP's native <code>password_hash($password, PASSWORD_DEFAULT)</code>, generating a secure 60-character bcrypt hash with automated cryptographic salting. Authentication is handled safely via <code>password_verify()</code>.</li>
+      <li><strong>SQL Injection Defense (PDO Prepared Statements):</strong> All interactions with the MySQL database utilize PHP Data Objects (PDO) with parameterized queries. Dynamic inputs are cleanly separated from SQL commands, completely neutralizing SQL injection risks.</li>
+      <li><strong>Session Fixation & Hijacking Prevention:</strong> Following successful authentication, <code>session_regenerate_id(true)</code> is invoked to refresh the session token and discard old IDs. Session variables securely persist the user's ID, username, and learning track across protected views.</li>
+      <li><strong>XSS Attack Prevention:</strong> All data retrieved from the database or user input is sanitized through <code>htmlspecialchars()</code> prior to HTML rendering.</li>
+    </ul>
+
+    <div class="page-footer">
+      <span>Web Programming Assignment 1</span>
+      <span>Page 3 of 5</span>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       PAGE 4: SECTION 5 - PRINTED SCREENSHOT OF HOME PAGE ONLY
+       ========================================================================= -->
+  <div class="doc-page">
+    <h2 class="section-heading"><span class="section-number">5.</span> Home Page Interface Presentation (Printed Screenshot)</h2>
+    <p>
+      In accordance with the submission guidelines stating <em>"Include printed screenshots of the following pages: Home Page only"</em>, Figure 1.0 displays the rendered Home Page of Django Girls Sierra Leone as served on local Apache (XAMPP).
+    </p>
+
+    <div class="screenshot-frame">
+      <img src="assets/images/homepage_screenshot.png" alt="Django Girls Sierra Leone Home Page Screenshot">
+    </div>
+    <div class="figure-caption">
+      Figure 1.0: Printed Screenshot of the Django Girls Sierra Leone Home Page (<code>index.php</code>) featuring prominent logo, feminine rose palette, vector icons, and statistics.
+    </div>
+
+    <p>
+      <strong>Interface Analysis & Key Highlights:</strong>
+    </p>
+    <ul>
+      <li><strong>Prominent Logo Integration:</strong> The official Django Girls logo is anchored prominently in the sticky top header bar, immediately establishing brand legitimacy alongside the Sierra Leone chapter identifier.</li>
+      <li><strong>Feminine & Professional Aesthetic:</strong> Warm rose accents, crisp SVG icons, and elegant card styling give the site a distinctive feminine yet professional atmosphere.</li>
+      <li><strong>Live Code Terminal Showcase:</strong> A realistic terminal showcase presents a Python class illustrating that beginner attendees will build real web applications from their very first day.</li>
+      <li><strong>Real-Time Database Cohorts:</strong> The workshops section below the hero area dynamically fetches active upcoming bootcamps directly from MySQL, demonstrating live server-side database integration.</li>
+    </ul>
+
+    <div class="page-footer">
+      <span>Web Programming Assignment 1</span>
+      <span>Page 4 of 5</span>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       PAGE 5: SECTION 6 - ASSESSMENT FORM & DECLARATION
+       ========================================================================= -->
+  <div class="doc-page">
+    <h2 class="section-heading"><span class="section-number">6.</span> Individual Assessment Form & Student Declaration</h2>
+    <p>
+      This assessment form summarizes the project deliverables against the coursework marking criteria, accompanied by the individual student declaration of original work.
+    </p>
+
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 25%;">Assessment Criteria</th>
+          <th style="width: 45%;">Requirement Description</th>
+          <th style="width: 30%;">Status & Evidence</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Logo Prominence</strong></td>
+          <td>Display the Django Girls logo prominently at the top of the page.</td>
+          <td class="badge-success">Achieved (In sticky top header)</td>
+        </tr>
+        <tr>
+          <td><strong>Sign-Up Page</strong></td>
+          <td>Create a user registration form with validation and database persistence.</td>
+          <td class="badge-success">Achieved (<code>register.php</code>)</td>
+        </tr>
+        <tr>
+          <td><strong>Login Page</strong></td>
+          <td>Implement a login form verifying user authentication.</td>
+          <td class="badge-success">Achieved (<code>login.php</code>)</td>
+        </tr>
+        <tr>
+          <td><strong>Dashboard</strong></td>
+          <td>Develop a personalized dashboard displaying member profile & tracks.</td>
+          <td class="badge-success">Achieved (<code>dashboard.php</code>)</td>
+        </tr>
+        <tr>
+          <td><strong>Logout Function</strong></td>
+          <td>Implement logout functionality to securely terminate session.</td>
+          <td class="badge-success">Achieved (<code>logout.php</code>)</td>
+        </tr>
+        <tr>
+          <td><strong>Security Hashing</strong></td>
+          <td>Use password hashing for storing user passwords securely.</td>
+          <td class="badge-success">Achieved (<code>password_hash</code> bcrypt)</td>
+        </tr>
+        <tr>
+          <td><strong>Copyright Footer</strong></td>
+          <td>Include required copyright: &copy; First Last, Program, Sem, ID, Year.</td>
+          <td class="badge-success">Achieved (<code>footer.php</code> compliant)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div style="margin-top: 25px;">
+      <h3 style="font-size: 11pt; margin-bottom: 6px;">Student Declaration of Original Work</h3>
+      <p style="font-size: 10.5pt; font-style: italic; color: #475569; line-height: 1.5;">
+        "I hereby declare that this assignment titled 'Design and Development of Initial Web Platform for Django Girls Sierra Leone' is my own individual and original work. All code structures, security mechanisms, database implementations, and written analyses have been executed in compliance with the academic integrity regulations of Limkokwing University of Creative Technology Sierra Leone."
+      </p>
+
+      <div class="signature-grid">
+        <div>
+          <strong>Student Signature:</strong> ____________________________<br>
+          <span style="color: #64748b;">Name: Alimatu Maliaka Jalloh</span>
+        </div>
+        <div>
+          <strong>Date:</strong> 12 October 2026<br>
+          <span style="color: #64748b;">Student ID: 905004463</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <span>Web Programming Assignment 1</span>
+      <span>Page 5 of 5</span>
+    </div>
+  </div>
+
+</body>
+</html>
